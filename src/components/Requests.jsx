@@ -15,18 +15,23 @@ const Requests = () => {
         {},
         { withCredentials: true }
       );
+
       dispatch(removeRequest(_id));
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const fetchRequests = async () => {
     try {
-      const res = await axios.get(BASE_URL + "/user/requests/received", {
+      const res = await axios.get(BASE_URL + "/requests/received", {
         withCredentials: true,
       });
 
       dispatch(addRequests(res.data.data));
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
