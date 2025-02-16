@@ -40,7 +40,6 @@ const Login = () => {
   
 
   const handleLogin = async () => {
-    debugger;
     const url = BASE_URL + "/auth/login";
     console.log('url');
     logCurlRequest(url, {
